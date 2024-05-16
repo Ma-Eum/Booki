@@ -220,13 +220,11 @@ a {
     margin: 0;
 }
 
-.filter-element:hover {
+.filter-element:hover,.filter-element:active  {
     background-color: var(--filter-bg-color);
+    border-radius: 25px;
 }
 
-.filter-element:active {
-    background-color: var(--filter-bg-color);
-}
 
 /****** Infos ***********/
 .info-container{
@@ -438,6 +436,8 @@ a {
 .activites-cards a>article{
     /* Définissez la taille du conteneur des cartes d'activités sur "auto" */
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .activites-card{
@@ -454,8 +454,11 @@ a {
     border-radius: 20px 20px 0 0;
 }
 
-.activites-card-content{
+.activites-card-txt{
     padding-left: 15px;
+    
+    padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 /****** Footer ***********/
@@ -544,6 +547,12 @@ a {
         height: auto;
     }
 
+    /****** Activité ***********/
+
+    .activites-card img {
+        height: 200px;
+    }
+
     /****** Footer ***********/
 
     .footer{
@@ -624,12 +633,22 @@ a {
         left: 0px; /* Positionnement de la barre par rapport à l'élément parent */
         visibility: hidden; /* Cachez initialement la barre */
         transition: visibility 0s, width 0.3s; /* Animation de la visibilité et de la largeur */
+        
+        z-index: 1;
     }
 
     .nav-element:hover::after {
         visibility: visible; /* Rendre la barre visible au survol */
         width: 50vw; /* Afficher la barre avec la largeur complète */
     }  
+
+    .nav-line {
+        position: absolute;
+        margin-top: 14px;
+        width: 100%;
+        height: 2px;
+        background-color: var(--main-bg-color); /* Couleur grise */
+    }
 
     /****** Search Bar ***********/
 
